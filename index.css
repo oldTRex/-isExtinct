@@ -21,9 +21,70 @@ body {
     height: 100px;
     margin-top: 30px;
     background-color: #32CD32;
-    transform: rotate(80deg) translate(30,30) ,  scale(0.7,0.6) ;
+    transform: rotate(80deg) translate(30,30)   scale(0.7,0.6) ;
     transform-origin: 25% 75%;
   }
   .rotate:hover {
     transform: translate(100px,50px);
   }
+
+ .animation {
+   width: 100px;
+   height: 100px;
+   background-color: rgb(86, 112, 109)7583;;
+   animation-name: colorchange;
+   animation-duration: 5s;
+   animation-timing-function: ease-out ;
+   animation-delay: 3s;
+   animation-iteration-count: 5;
+   animation-direction: alternate;
+ } 
+  @keyframes colorchange {
+    0% {background-color: #147583;}
+    25% {background-color: #288d8d  ;}
+    50% {background-color: #3da1a1  ;}
+    75% {background-color: #99d4d4  ;}
+    100% {background-color: lightblue;}
+ }
+
+ #cube{
+  margin: 200px;
+  float: inline-end;
+  perspective: 200px;  
+ }
+ #d1 {
+   background-size: 400px;
+   width: 50px;
+   height:50px ;
+   background-color: aquamarine;
+   transform: rotatex( 30deg ) translateX(26px) ;
+ }
+ #d2 {
+  background-size: 400px;
+  width: 50px;
+  height:50px ;
+  background-color: rgb(255, 146, 127);
+  transform: rotateX( 30deg ) translateX(26px);
+}
+#d3 {
+  background-size: 400px;
+  width: 50px;
+  height:50px ;
+  background-color: rgb(255, 127, 206);
+}
+#dropshadow{
+  background-color: aqua;
+  width: 100px;
+  height: 100px;
+  filter: drop-shadow(5px 9px 4px rgb(215, 235, 34));
+}
+.filtered {
+  background-color:  red;
+  filter: grayscale(0%);
+  filter: sepia(0%);
+  filter: saturate(1);
+  filter: hue-rotate(360deg);
+  filter: invert(100%);
+  width: 100px;
+  height: 100px;
+}
