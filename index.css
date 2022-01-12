@@ -84,8 +84,14 @@ body {
   filter: sepia(0%);
   filter: saturate(1);
   filter: hue-rotate(360deg);
-  filter: invert(100%);
-  width: 100px;
+  filter: invert(0%);
+  filter: opacity(100%);
+  filter: brightness(100%);
+  filter: contrast(100%);
+  filter: blur(0px);
+  /* multiple filters */
+  filter: blur(0px) hue-rotate(0deg);
+  filter: saturate(30%) drop-shadow(5px 9px 4px gray) blur(1px);
+  width:  100px;
   height: 100px;
-  
 }

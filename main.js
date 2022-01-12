@@ -1,6 +1,8 @@
 var d= 0;
 var h=0;
 
+document.write("<h1>hello</h1>")
+
 async function right() {
     var x = document.getElementsByClassName("rotate");
     d+=30;
@@ -36,5 +38,7 @@ async function down() {
     x[0].style.transform =  trans;
     
 }
-console.log(d,h);
-while( d > 360  && h > 60) alert("you won!");
+ 
+//alert(eval("10 * 20 + 8"));
+var x =  '324' * 5;
+document.write(x)
