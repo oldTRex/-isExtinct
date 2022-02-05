@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head></head>
+<body>
+
+<h3>A demonstration of how to access an IMG element</h3>
+
+<img id="myImg" src="capture.png" alt="The Pulpit Rock" width="304" height="228">
+
+<p>Click the button to get the URL of the image.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<script>
+    images = [ "apple.jfif" , "orange.jfif"  , "plum.jfif" ]
+function myFunction() {
+  var image = images.shift();
+  var x = document.getElementById("myImg") 
+   x.src = image 
+}
+</script>
+
+</body>
+</html>

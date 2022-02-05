@@ -1,7 +1,6 @@
 var d= 0;
 var h=0;
 
-document.write("<h1>hello</h1>")
 
 async function right() {
     var x = document.getElementsByClassName("rotate");
@@ -41,4 +40,33 @@ async function down() {
  
 //alert(eval("10 * 20 + 8"));
 var x =  '324' * 5;
-document.write(x)
+//document.write(x);
+
+//var bool = confirm("you want to exit ?");
+ 
+
+function getTime(){
+  var d = new Date();
+  var seconds =  d.getSeconds();
+  var minutes =  d.getMinutes();
+  var hours =  d.getHours();
+  document.body.innerHTML =  hours + " : " + minutes + " : " + seconds ;
+}
+
+//setInterval( getTime , 1000)
+    
+var x = document.getElementById("myImg") ;
+console.log( x )
+
+// el.src = "apple.jfif";
+var images = [ ]
+images.push("apple.jfif");    
+images.push("orange.jfif")
+var i = 0;
+
+function changeImage(){
+  var image = images.shift();
+   console.log(image  );
+// el.src = image;
+}
+setInterval( changeImage , 1000)
