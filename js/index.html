@@ -3,10 +3,23 @@
 
 <head>
 
-  <script src="index.js"  > </script>
-
+  
+   <style> 
+     #container{
+       width: 200px;
+       height: 200px;
+       background: green;
+       position: relative;
+     }
+     #box {
+       width: 50px;
+       height: 50px;
+       background: red;
+       position:  absolute;
+     }
+  </style>
 </head>
-<body>
+<body onload="clear()">
 
 <h2> images of  Fruits </h2>
 
@@ -18,11 +31,27 @@
  
 <p> Click the button  </p>
 
-<button onclick="myFunction()"> Next </button>
-<button onclick="addChild()"> Add Child </button>
-<button onclick="removeChild()"> Remove Child </button>
+<button onclick= "myFunction()" > Next </button>
+<button onclick= "addChild()" > Add Child </button>
+<button onclick= "deleteChild()" >  Remove Child </button>
 
- 
+<button id="demoBtn" > test </button>
+
+  <div id="container"> 
+    <div  id="box">  </div>
+  </div>
+
+  <input type="text"  id="name"  >
+  <script src="index.js"  >  </script>
+     <hr>
+  <form onsubmit="validate()" method="post">
+    Number: <input type="text" name="num1" id="num1" />
+    <br />
+    Repeat: <input type="text" name="num2" id="num2" />
+    <br />
+    <input type="submit" value="Submit" />
+  </form>
+
 </body>
 
 </html>

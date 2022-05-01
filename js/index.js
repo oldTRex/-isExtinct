@@ -1,10 +1,14 @@
+window.onload = function() {
+     images = ["apple.jfif", "orange.jfif", "plum.jfif"];
+     k = 0;  
+}
 
-images = ["apple.jfif", "orange.jfif", "plum.jfif"];
-k = 0;
+
 function myFunction() {
     var randomColor = Math.floor(Math.random()*16777215).toString(16);
 
-    if (k > 2) k = 0;
+    k++;
+    if (k >=  images.length ) k = 0;
     var image = images[k];
     console.log(k + ":" + image + " , random color : " + randomColor);
     
@@ -15,7 +19,7 @@ function myFunction() {
     
     div1.style.backgroundColor  = "6600FF" ;
     console.log(div1.style);
-    k++;
+   
 
 var p = document.createElement("p")
 var node = document.createTextNode("Some new text");
@@ -27,32 +31,89 @@ var div  = document.getElementById("demo");
 div.appendChild(p)
 }
    
-
+var PNum  = 1;
 function addChild(){
     var div  = document.getElementById("demo");
-    var p1 = document.createElement("p");
-    var p2 = document.createElement("p");
-    
+    var p1 = document.createElement("p" );
+      PNum++;
+    p1.id = "p"+ PNum;
     var node1 = document.createTextNode(" This is a paragraph. ");
 
     p1.appendChild(node1);
-    p2.appendChild(node1);
-    
+     
     div.appendChild(p1);
-    div.appendChild(p2);
-
- //   p1.innerText = " This is a paragraph. ";
- //   p2.innerText = " This is another paragraph. ";
+     
+    console.log(div.childNodes);
+    console.log(p1.id);
+ 
     
 }
 
-function removeChild(){
-    var p1 = document.createElement("p");
-    var p2 = document.createElement("p");
-    p1.innerText = " This is a paragraph. ";
-    p2.innerText = " This is another paragraph. ";
+function deleteChild(){
+   var parent1  = document.getElementById("demo");
+   var child1  = document.getElementById("p" + PNum );
+   console.log(child1 , PNum);
+    if(child1 != null) {
+        parent1.removeChild(child1);
+        PNum--;
+    }
+  
+}
+
+// starting position
+var pos = 0; 
+//our box element
+var box = document.getElementById("box");
+
+function move() {
+  if(pos >= 150) {
+    clearInterval(t);
+  }
+  else {
+    pos += 1;
+    box.style.left = pos+"px";
+  }
 }
 
 
+var t = setInterval(move, 5000); 
 
+ var ts = document.getElementById("demoBtn");
+ console.log(ts);
+ 
+   ts.onclick  = function ()  {
+   //document.body.innerHTML = Date();
+   console.log("hi");
+   }
+   
+   ts.addEventListener("click" , myFunction);
 
+   function myFunction(){
+        console.log(Math.random());
+        ts.removeEventListener('click', myFunction);
+   }
+
+  function  change() {
+    inp1 = document.getElementById("name");
+    inp1.value = inp1.value.toUpperCase();
+  }
+
+  ts.addEventListener("mouseover", mouseover);
+
+function mouseover() {
+  console.log("Hello World!");
+}
+ 
+
+function validate() {
+  var n1 = document.getElementById("num1");
+  var n2 = document.getElementById("num2");
+   if(n1.value != "" && n2.value != "" ){
+        if(n1.value == n2.value){
+          return true; 
+        }
+   }
+   let name = 'David';
+   let msg  = ` welcome ${name}! `;
+   alert( msg )
+}
